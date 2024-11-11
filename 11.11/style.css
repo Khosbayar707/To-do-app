@@ -1,0 +1,6 @@
+.todo-item {
+  display: flex;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  border: solid 2px black;
+}

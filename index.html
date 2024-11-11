@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Hello</div>
+
+    <button onclick="sayHello()">Say Hello</button>
+    <button onclick="printName()">PRINT NAME</button>
+    <button onclick="deleteName()">DELETE NAME</button>
+    <button onclick="getName()">GET NAME</button>
+
+    <div id="name-container" style="font-size: large; color: blue"></div>
+    <div id="new-name" style="font-size: large; color: red"></div>
+    <script>
+      function sayHello() {
+        alert("Hello World!");
+      }
+
+      function getName() {
+        let takeNameElement = document.getElementById("new-name");
+        takeNameElement.innerText = prompt();
+      }
+
+      function printName() {
+        let nameContainerElement = document.getElementById("name-container");
+        nameContainerElement.innerText = "John";
+      }
+
+      function deleteName() {
+        let nameContainerElement = document.getElementById("name-container");
+        nameContainerElement.innerText = "";
+      }
+    </script>
+  </body>
+</html>

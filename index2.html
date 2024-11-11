@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO-LIST</title>
+    <style>
+      .task {
+        border-radius: 5px;
+        border: solid black 2px;
+        padding: 5px;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="addTask()">ADD NEW TASK</button>
+    <button onclick="changeStatus()">CHANGE STATUS</button>
+    <button onclick="deleteTask()">DELETE TASK</button>
+    <div style="display: flex">
+      <div id="tasks" class="task"></div>
+      <div id="status" class="task"></div>
+    </div>
+
+    <script>
+      // add new
+      let tasks = [
+        { name: "huwtssaa ugaah", status: "todo" },
+        { name: "geree tsewerleh", status: "todo" },
+        { name: "duugee harah", status: "todo" },
+      ];
+      function render() {
+        let output = document.getElementById("tasks");
+        output.innerHTML = "";
+        for (let i = 0; i < tasks.length; i++) {
+          output.innerHTML += '<div class="task">' + tasks[i].name + "</div>";
+        }
+      }
+      function addTask() {
+        let name = prompt("Add new task here:");
+        tasks.push({ name: name });
+        render();
+      }
+      render();
+
+      // change status
+
+      function renderForStatus() {
+        let output = document.getElementById("status");
+        output.innerHTML = "";
+        for (let i = 0; i < tasks.length; i++) {
+          output.innerHTML += '<div class="task">' + tasks[i].status + "</div>";
+        }
+      }
+      function changeStatus(i, status) {
+        i = prompt("aliig solih ve?");
+        parseInt(i);
+        status = prompt("Change status here:");
+        tasks[i - 1].status = status;
+        renderForStatus();
+      }
+      renderForStatus();
+
+      // delete status
+
+      function deleteTask() {
+        i = prompt("aliig ustgah ve?");
+        parseInt(i);
+        let arr = [];
+        for (i = 0; i < tasks.length; i++) {
+          if (i !== index) {
+            arr.push(tasks[i - 1]);
+          }
+          tasks = arr;
+        }
+      }
+      deleteTask();
+    </script>
+  </body>
+</html>
