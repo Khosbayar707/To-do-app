@@ -3,13 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>To do list</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
   </head>
   <body>
     <script src="list.js"></script>
-
-    <button onclick="addTodo()">Add to do</button>
-    <div id="tasks" class="main"></div>
+    <main class="background-image">
+      <div class="add-button-home">
+        <button onclick="addTodo()" ; class="add-button-style">Add task</button>
+      </div>
+      <div class="card-body">
+        <div class="card-box">
+          <div class="status-board">
+            <div class="board-item-1"></div>
+            <p class="board-text">To do</p>
+          </div>
+          <div id="tasks"></div>
+        </div>
+        <div class="card-box">
+          <div class="status-board">
+            <div class="board-item-2"></div>
+            <p class="board-text">In progress</p>
+          </div>
+          <div class="list-item"></div>
+        </div>
+        <div class="card-box">
+          <div class="status-board">
+            <div class="board-item-3"></div>
+            <p class="board-text">Done</p>
+          </div>
+          <div class="list-item"></div>
+        </div>
+        <div class="card-box">
+          <div class="status-board">
+            <div class="board-item-4"></div>
+            <p class="board-text">Blocked</p>
+          </div>
+          <div class="list-item"></div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

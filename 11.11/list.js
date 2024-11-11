@@ -2,11 +2,19 @@ let STATUS = "TODO" || "DONE";
 
 let todos = [];
 
+// add new to do task
+function addTodo() {
+  let input = prompt("Enter task name");
+  todos.push({ name: input, status: "TODO" });
+  render();
+}
+
 // change status
 
 function editStatus(index, status) {
   let item = todos[index];
   item.status = status;
+  render();
 }
 
 // change name:
@@ -14,15 +22,16 @@ function editStatus(index, status) {
 function editName(index, name) {
   let item = todos[index];
   item.name = name;
+  render();
 }
 
 // delete from list:
 
-function deleteOne(number, newItem) {
-  todos.splice(number, 0, newItem);
-}
+// function deleteOne(number, newItem) {
+//   todos.splice(number, 0, newItem);
+// }
 
-// delete item form list 2nd
+// delete item form list:
 function deleteOneAgain(index) {
   let arr = [];
   for (i = 0; i < todos.length; i++) {
@@ -38,6 +47,7 @@ function deleteOneAgain(index) {
 
 function deleteAll() {
   todos = [];
+  render();
 }
 
 // Count to do tasks
@@ -51,8 +61,8 @@ function countTodo() {
     }
   }
   return count;
+  render();
 }
-
 const todoCount = countTodo();
 
 // RUNNING APPLICATION-11/11
@@ -60,33 +70,31 @@ function render() {
   let todoList = document.querySelector("#tasks");
   todoList.innerHTML = "";
 
-  console.log(todoList);
-
   for (let i = 0; i < todos.length; i++) {
     let item = todos[i];
-    // Create new task
 
+    // Create new task
     let element = document.createElement("div");
-    element.classList.add("todo-item");
+    element.classList.add("list-item");
 
     // Create task name
-
     let titleEl = document.createElement("p");
+    element.classList.add("todo-name");
     titleEl.innerText = item.name;
 
     // Create edit button
-
-    let edBtnEl = document.createElement("button");
-    edBtnEl.innerText = "Edit";
+    let edBtnEl = document.createElement("span");
+    edBtnEl.innerHTML =
+      '<span class="material-symbols-outlined">' + "edit" + "</span>";
     edBtnEl.onclick = function () {
       let newName = prompt("Enter new name:");
       editName(i, newName);
       render();
     };
-    // Delete to do
-
-    let deleteBtn = document.createElement("button");
-    deleteBtn.innerText = "Delete";
+    // Delete to do task
+    let deleteBtn = document.createElement("span");
+    deleteBtn.innerHTML =
+      '<span class="material-symbols-outlined">' + "delete" + "</span>";
     deleteBtn.onclick = function () {
       index = i;
       // let deletelist = prompt("Delete from list:");
@@ -99,10 +107,4 @@ function render() {
     element.appendChild(deleteBtn);
     todoList.appendChild(element);
   }
-}
-
-function addTodo() {
-  let input = prompt("Enter todo name");
-  todos.push({ name: input, status: "TODO" });
-  render();
 }
