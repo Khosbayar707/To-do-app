@@ -36,8 +36,8 @@
   border: solid 2px black;
 } */
 .background-image {
-  /* background-color: rgba(26, 26, 26, 1); */
-  background-image: url(/picture/dark-black-abstract-background-with-wood-chips.jpg);
+  background-color: rgba(26, 26, 26, 1);
+  /* background-image: url(/picture/dark-black-abstract-background-with-wood-chips.jpg); */
   background-position: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -115,10 +115,6 @@
 }
 
 .list-item {
-  max-width: 240px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 54px;
   padding: 12px 0px 0px 0px;
   border-radius: 8px;
   background-color: rgba(26, 26, 26, 1);
@@ -179,4 +175,10 @@
 }
 select {
   height: 80px;
+}
+.tasks {
+  max-width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 54px;
 }

@@ -81,12 +81,15 @@ const todoCount = countTodo();
 
 // RUNNING APPLICATION-11/11
 function render() {
+  document.getElementById("Todo").innerHTML = "";
+  document.getElementById("In-progress").innerHTML = "";
+  document.getElementById("Done").innerHTML = "";
+  document.getElementById("Blocked").innerHTML = "";
+
   for (let i = 0; i < todos.length; i++) {
     let containerName = todos[i].status;
     let todoList = document.getElementById(containerName);
-    let taskList = todoList.querySelector("#tasks");
-
-    taskList.innerHTML = "";
+    let taskList = todoList.querySelector(".tasks");
 
     let item = todos[i];
     // Create new task
