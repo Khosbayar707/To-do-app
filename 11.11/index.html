@@ -21,33 +21,46 @@
         <button onclick="addTodo()" ; class="add-button-style">Add task</button>
       </div>
       <div class="card-body">
-        <div class="card-box">
+        <div class="card-box" id="Todo">
           <div class="status-board">
             <div class="board-item-1"></div>
             <p class="board-text">To do</p>
           </div>
           <div id="tasks"></div>
         </div>
-        <div class="card-box">
+        <div class="card-box" id="In-progress">
           <div class="status-board">
             <div class="board-item-2"></div>
             <p class="board-text">In progress</p>
           </div>
-          <div class="list-item"></div>
+          <div id="tasks"></div>
         </div>
-        <div class="card-box">
+        <div class="card-box" id="Done">
           <div class="status-board">
             <div class="board-item-3"></div>
             <p class="board-text">Done</p>
           </div>
-          <div class="list-item"></div>
+          <div id="tasks"></div>
         </div>
-        <div class="card-box">
+        <div class="card-box" id="Blocked">
           <div class="status-board">
             <div class="board-item-4"></div>
             <p class="board-text">Blocked</p>
           </div>
-          <div class="list-item"></div>
+          <div id="tasks"></div>
+        </div>
+      </div>
+      <div id="modal">
+        <div class="modal-content">
+          <h1>Enter new task</h1>
+          <input type="text" id="task-name" />
+          <select name="Select status" id="task-status" value="Todo">
+            <option value="Todo">To do</option>
+            <option value="In-progress">In-progress</option>
+            <option value="Done">Done</option>
+            <option value="Blocked">Blocked</option>
+          </select>
+          <button onclick="saveTask()">Submit</button>
         </div>
       </div>
     </main>
