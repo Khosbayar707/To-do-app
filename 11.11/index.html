@@ -67,7 +67,7 @@
       <div id="edit-modal">
         <div class="modal-content">
           <h1>Edit task</h1>
-          <input type="text" id="task-name" placeholder="Task name..." />
+          <input type="text" id="edited-name" placeholder="New name..." />
           <select name="Select status" id="edited-status" value="Todo">
             <option value="" disabled selected status>Select status</option>
             <option value="Todo">To do</option>
@@ -75,7 +75,7 @@
             <option value="Done">Done</option>
             <option value="Blocked">Blocked</option>
           </select>
-          <button class="submit-button" onclick="saveTask()">Submit</button>
+          <button class="submit-button" onclick="editTask()">Save</button>
         </div>
       </div>
     </main>

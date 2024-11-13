@@ -11,7 +11,6 @@ function addTodo() {
 }
 
 // save tasks by submit button
-
 function saveTask() {
   let inputValue = document.getElementById("task-name").value;
   let statusValue = document.getElementById("task-status").value;
@@ -23,15 +22,34 @@ function saveTask() {
   render();
 }
 
+// // edit task by modal
+
+// function editTask() {
+//   let inputValue = document.getElementById("task-name").value;
+//   let statusValue = document.getElementById("task-status").value;
+//   todos.push({ name: inputValue, status: statusValue });
+
+//   let editModal = document.querySelector("#edit-modal");
+//   editModal.style.display = "none";
+
+//   render();
+// }
+
 // edit task by modal
 
-function editTask() {
-  let inputValue = document.getElementById("task-name").value;
-  let statusValue = document.getElementById("task-status").value;
-  todos.push({ name: inputValue, status: statusValue });
+function editTodo() {
+  let editModal = document.querySelector("#edit-modal");
+  editModal.style.display = "block";
+  render();
+}
 
-  let modal = document.querySelector("#edit-modal");
-  modal.style.display = "none";
+function editTask() {
+  let editedNameValue = document.getElementById("edited-name").value;
+  let editedStatusValue = document.getElementById("edited-status").value;
+  todos.push({ name: editedNameValue, status: editedStatusValue });
+
+  let editModal = document.querySelector("#edit-modal");
+  editModal.style.display = "none";
 
   render();
 }
@@ -118,9 +136,9 @@ function render() {
     edBtnEl.innerHTML =
       '<span class="material-symbols-outlined">' + "edit" + "</span>";
     edBtnEl.onclick = function () {
-      editTask();
+      editTodo();
+      render();
     };
-
     // Delete to do task
     let deleteBtn = document.createElement("span");
     deleteBtn.innerHTML =
