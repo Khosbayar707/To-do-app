@@ -26,41 +26,56 @@
             <div class="board-item-1"></div>
             <p class="board-text">To do</p>
           </div>
-          <div class="tasks" id="Todo"></div>
+          <div id="Todo"></div>
         </div>
-        <div class="card-box" ">
+        <div class="card-box">
           <div class="status-board">
             <div class="board-item-2"></div>
             <p class="board-text">In progress</p>
           </div>
-          <div class="tasks" id="In-progress"></div>
+          <div id="In-progress"></div>
         </div>
-        <div class="card-box" >
+        <div class="card-box">
           <div class="status-board">
             <div class="board-item-3"></div>
             <p class="board-text">Done</p>
           </div>
-          <div class="tasks" id="Done"></div>
+          <div id="Done"></div>
         </div>
-        <div class="card-box" >
+        <div class="card-box">
           <div class="status-board">
             <div class="board-item-4"></div>
             <p class="board-text">Blocked</p>
           </div>
-          <div class="tasks" id="Blocked"></div>
+          <div id="Blocked"></div>
         </div>
       </div>
       <div id="modal">
         <div class="modal-content">
           <h1>Enter new task</h1>
-          <input type="text" id="task-name" />
+          <input type="text" id="task-name" placeholder="Task name..." />
           <select name="Select status" id="task-status" value="Todo">
+            <option value="" disabled selected status>Select status</option>
             <option value="Todo">To do</option>
             <option value="In-progress">In-progress</option>
             <option value="Done">Done</option>
             <option value="Blocked">Blocked</option>
           </select>
-          <button onclick="saveTask()">Submit</button>
+          <button class="submit-button" onclick="saveTask()">Submit</button>
+        </div>
+      </div>
+      <div id="edit-modal">
+        <div class="modal-content">
+          <h1>Edit task</h1>
+          <input type="text" id="task-name" placeholder="Task name..." />
+          <select name="Select status" id="edited-status" value="Todo">
+            <option value="" disabled selected status>Select status</option>
+            <option value="Todo">To do</option>
+            <option value="In-progress">In-progress</option>
+            <option value="Done">Done</option>
+            <option value="Blocked">Blocked</option>
+          </select>
+          <button class="submit-button" onclick="saveTask()">Submit</button>
         </div>
       </div>
     </main>

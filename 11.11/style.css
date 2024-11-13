@@ -36,7 +36,7 @@
   border: solid 2px black;
 } */
 .background-image {
-  background-color: rgba(26, 26, 26, 1);
+  background-color: #242e49;
   /* background-image: url(/picture/dark-black-abstract-background-with-wood-chips.jpg); */
   background-position: cover;
   background-repeat: no-repeat;
@@ -54,7 +54,7 @@
 }
 
 .card-box {
-  background-color: rgba(16, 16, 16, 1);
+  background-color: #181a2f;
   width: 280px;
   height: 672px;
   padding: 20px;
@@ -117,10 +117,14 @@
 .list-item {
   padding: 12px 0px 0px 0px;
   border-radius: 8px;
-  background-color: rgba(26, 26, 26, 1);
+  background-color: #031716;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 54px;
 }
 .todo-name {
   font-family: Inter;
@@ -162,10 +166,12 @@
 .modal-content {
   background-color: rgba(30, 30, 30, 1);
   margin: 50px auto;
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   justify-content: center;
+  align-items: center;
   border-radius: 16px;
   padding: 12px;
   color: white;
@@ -173,12 +179,51 @@
 .modal-content > input {
   padding: 6px;
 }
-select {
-  height: 80px;
+input {
+  height: 35px;
+  width: 80%;
+  border-radius: 5px;
+  background-color: transparent;
+  border-color: gray;
+  color: white;
 }
-.tasks {
-  max-width: 240px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 54px;
+input:hover {
+  background-color: gray;
+}
+select {
+  height: 35px;
+  width: 80%;
+  border-radius: 5px;
+  background-color: transparent;
+  border-color: gray;
+  color: white;
+}
+select:hover {
+  background-color: gray;
+}
+
+.submit-button {
+  background-color: rgba(0, 163, 0, 1);
+  width: 80%;
+  height: 44px;
+  border-radius: 4px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#edit-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
 }

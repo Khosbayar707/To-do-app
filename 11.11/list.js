@@ -6,7 +6,7 @@ let todos = [];
 function addTodo() {
   let modal = document.querySelector("#modal");
   modal.style.display = "block";
-
+  modal.classList.add("show-up");
   render();
 }
 
@@ -23,6 +23,18 @@ function saveTask() {
   render();
 }
 
+// edit task by modal
+
+function editTask() {
+  let inputValue = document.getElementById("task-name").value;
+  let statusValue = document.getElementById("task-status").value;
+  todos.push({ name: inputValue, status: statusValue });
+
+  let modal = document.querySelector("#edit-modal");
+  modal.style.display = "none";
+
+  render();
+}
 // change status
 
 function editStatus(index, status) {
@@ -74,8 +86,8 @@ function countTodo() {
       count++;
     }
   }
-  return count;
   render();
+  return count;
 }
 const todoCount = countTodo();
 
@@ -88,8 +100,7 @@ function render() {
 
   for (let i = 0; i < todos.length; i++) {
     let containerName = todos[i].status;
-    let todoList = document.getElementById(containerName);
-    let taskList = todoList.querySelector(".tasks");
+    let taskList = document.querySelector("#" + containerName);
 
     let item = todos[i];
     // Create new task
@@ -107,10 +118,9 @@ function render() {
     edBtnEl.innerHTML =
       '<span class="material-symbols-outlined">' + "edit" + "</span>";
     edBtnEl.onclick = function () {
-      let newName = prompt("Enter new name:");
-      editName(i, newName);
-      render();
+      editTask();
     };
+
     // Delete to do task
     let deleteBtn = document.createElement("span");
     deleteBtn.innerHTML =
