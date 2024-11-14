@@ -15,26 +15,20 @@ function saveTask() {
   let inputValue = document.getElementById("task-name").value;
   let statusValue = document.getElementById("task-status").value;
   todos.push({ name: inputValue, status: statusValue });
-
   let modal = document.querySelector("#modal");
   modal.style.display = "none";
-
   render();
 }
 
-// // edit task by modal
+function closeButton() {
+  let editModal = document.querySelector("#edit-modal");
+  editModal.style.display = "none";
+}
 
-// function editTask() {
-//   let inputValue = document.getElementById("task-name").value;
-//   let statusValue = document.getElementById("task-status").value;
-//   todos.push({ name: inputValue, status: statusValue });
-
-//   let editModal = document.querySelector("#edit-modal");
-//   editModal.style.display = "none";
-
-//   render();
-// }
-
+function addCloseButton() {
+  let modal = document.querySelector("#modal");
+  modal.style.display = "none";
+}
 // edit task by modal
 
 function editTodo() {
@@ -44,6 +38,14 @@ function editTodo() {
 }
 
 function editTask() {
+  let arr = [];
+  for (i = 0; i < todos.length; i++) {
+    if (i !== index) {
+      arr.push(todos[i]);
+    }
+  }
+  todos = arr;
+
   let editedNameValue = document.getElementById("edited-name").value;
   let editedStatusValue = document.getElementById("edited-status").value;
   todos.push({ name: editedNameValue, status: editedStatusValue });
@@ -136,9 +138,11 @@ function render() {
     edBtnEl.innerHTML =
       '<span class="material-symbols-outlined">' + "edit" + "</span>";
     edBtnEl.onclick = function () {
+      index = i;
       editTodo();
       render();
     };
+
     // Delete to do task
     let deleteBtn = document.createElement("span");
     deleteBtn.innerHTML =
@@ -147,7 +151,6 @@ function render() {
       "</span>";
     deleteBtn.onclick = function () {
       index = i;
-      // let deletelist = prompt("Delete from list:");
       deleteOneAgain(index);
       render();
     };
