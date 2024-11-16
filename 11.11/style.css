@@ -14,8 +14,7 @@
   border: solid 2px rgb(39, 87, 176);
   border-radius: 8px;
   width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .add-button-style {
@@ -49,6 +48,7 @@
 .background-image {
   /* background-image: url(/picture/board.jpg); */
   background-size: cover;
+  background-color: black;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -60,16 +60,17 @@
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
-  grid-template-columns: 1fr 12;
-  grid-template-rows: 1fr 12;
+  grid-template-columns: 1fr 7;
+  grid-template-rows: 1fr 6;
 }
 
 .card-box {
-  background-color: #181a2f;
+  background-color: #1e2039;
   padding: 20px;
   gap: 30px;
   border-radius: 12px;
-  border: solid 2px rgb(39, 87, 176);
+  border: solid 3px rgb(80, 107, 157);
+  height: 670px;
 }
 .status-board {
   max-width: 240px;
@@ -237,14 +238,15 @@ select:hover {
 }
 
 .box-head {
-  width: 110%;
+  width: 90%;
   display: flex;
   justify-content: space-around;
+  font-size: smaller;
 }
 
 #closeButton {
   box-sizing: border-box;
-  padding: 15px;
+  padding: 10px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -257,20 +259,23 @@ select:hover {
   grid-row-end: 5;
 }
 .item-2 {
-  grid-column-start: 4;
-  grid-column-end: 6;
+  grid-column-start: 3;
+  grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 5;
 }
 .item-3 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+.item-4 {
   grid-column-start: 7;
   grid-column-end: 9;
   grid-row-start: 1;
   grid-row-end: 5;
 }
-.item-4 {
-  grid-column-start: 10;
-  grid-column-end: 12;
-  grid-row-start: 1;
-  grid-row-end: 5;
+.box-titles {
+  font-size: 25px;
 }
