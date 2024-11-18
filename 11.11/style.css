@@ -6,7 +6,7 @@
   font-family: Inter;
 }
 .title {
-  color: rgb(0, 0, 0);
+  color: white;
   font-size: 20px;
   text-align: center;
   box-sizing: border-box;
@@ -14,7 +14,8 @@
   border: solid 2px rgb(39, 87, 176);
   border-radius: 8px;
   width: 60%;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .add-button-style {
